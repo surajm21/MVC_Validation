@@ -1,0 +1,75 @@
+﻿@model Data_Annotaion_DemoWebApplication.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <div> 
+        @using(Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+        <table>
+            <tr>
+                <td>Student rno</td>
+                <td>@Html.TextBoxFor(e => e.rno) </td>
+                <td style="color:red">@Html.ValidationMessageFor(e=>e.rno)</td>
+            </tr>
+            <tr>
+                <td>Student Name</td>
+                <td>@Html.TextBoxFor(e => e.name) </td>
+                <td>@Html.ValidationMessageFor(e => e.name)</td>
+                    
+            </tr>
+               
+            <tr>
+                <td>Student age</td>
+                <td>@Html.TextBoxFor(e => e.age) </td>
+                <td>@Html.ValidationMessageFor(e => e.age)</td>
+
+            </tr>
+            <tr>
+                <td>Student MobileNo</td>
+                <td>@Html.TextBoxFor(e => e.mobileNumber) </td>
+                <td>@Html.ValidationMessageFor(e =>e.mobileNumber)</td>
+
+            </tr>
+            <tr>
+                <td>Student Email Address</td>
+                <td>@Html.TextBoxFor(e => e.emailAddress) </td>
+                <td>@Html.ValidationMessageFor(e => e.emailAddress)</td>
+
+            </tr>
+            <tr>
+                <td>Student Password</td>
+                <td>@Html.PasswordFor(e=>e.password)</td>
+                 <td>@Html.ValidationMessageFor(e => e.password)</td> 
+                
+               
+                
+
+
+            </tr>
+            <tr>
+                <td>Student Confirm Password</td>
+                <td>@Html.PasswordFor(e=>e.confirmPassword)</td>>
+                <td>@Html.ValidationMessageFor(e=>e.confirmPassword)</td>
+
+            </tr>
+            <tr>
+                
+                <td><input type="submit" value=" Submit" /> </td>
+            </tr>
+
+                         
+        </table>
+        }
+    </div>
+</body>
+</html>
